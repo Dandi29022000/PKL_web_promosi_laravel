@@ -18,7 +18,6 @@ class CreateSewaDetailsTable extends Migration
             $table->integer('permainan_id');
             $table->integer('sewa_id');
             $table->integer('lama_sewa');
-            $table->integer('tot_harga');
             $table->timestamps();
         });
     }

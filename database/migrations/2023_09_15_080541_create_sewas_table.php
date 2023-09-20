@@ -17,7 +17,6 @@ class CreateSewasTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->date('tanggal');
-            $table->integer('tot_harga');
             $table->timestamps();
         });
     }
