@@ -19,11 +19,11 @@
                 <div class="card-body">
                     <h3><i class="fa fa-shopping-cart"></i> Check Out</h3>
                     @if(!empty($Sewa))
-                    <p align="right">Tanggal Pesan : {{ $Sewa->tanggal }}</p>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Tanggal Pesan</th>
                                 <th>Gambar</th>
                                 <th>Nama Permainan</th>
                                 <th>Lama Sewa</th>
@@ -35,6 +35,7 @@
                             @foreach($Sewa_details as $Sewa_detail)
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                <td>{{ $Sewa->tanggal }}</td>
                                 <td>
                                     <img src="{{asset('storage/'.$Sewa_detail->Inflatable->gambar)}}" width="200" alt="...">
                                 </td>
@@ -50,10 +51,10 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td colspan="4" align="right"></td>
+                                <td colspan="5" align="right"></td>
                                 <td>
-                                    <a href="{{ url('frontend/check-out/konfirmasi') }}" class="btn btn-success mt-3" onclick="return confirm('Anda yakin akan Check Out ?');">
-                                        <i class="fa fa-shopping-cart"></i> Check Out
+                                    <a href="{{ url('frontend/check-out/konfirmasi') }}" target="_blank" class="btn btn-success mt-3" onclick="return confirm('Anda yakin akan melanjutkan ke WhatsApp?');">
+                                        <i class="fa-brands fa-whatsapp"></i> Lanjutkan ke WhatsApp
                                     </a>
                                 </td>
                             </tr>

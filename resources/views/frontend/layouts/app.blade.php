@@ -39,7 +39,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item mx-3">
-                            <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                            <a class="nav-link active" aria-current="page" href="/frontend-dashboard">Beranda</a>
                         </li>
                         
                         <li class="nav-item dropdown mx-3">
@@ -48,8 +48,8 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/frontend-inflatables">Inflatables</a></li>
-                                <li><a class="dropdown-item" href="#">Interactive</a></li>
-                                <li><a class="dropdown-item" href="#">Carnival</a></li>
+                                <li><a class="dropdown-item" href="/frontend-interactive">Interactive</a></li>
+                                <li><a class="dropdown-item" href="/frontend-carnival">Carnival</a></li>
                                 <li><a class="dropdown-item" href="#">Water</a></li>
                                 <li><a class="dropdown-item" href="#">Electrical</a></li>
                                 <li><a class="dropdown-item" href="#">Funny</a></li>

@@ -74,8 +74,17 @@ Route::group(['middleware' => ['auth', 'CekLevel:admin']], function () {
 // TAMPILAN FRONTEND USER
 Route::get('/frontend-dashboard', [FrontendController::class, 'index'])->name('frontend.dashboard');
 Route::get('/frontend-inflatables', [FrontendController::class, 'inflatables'])->name('frontend.inflatables');
+Route::get('/frontend-interactive', [FrontendController::class, 'interactive'])->name('frontend.interactive');
+Route::get('/frontend-carnival', [FrontendController::class, 'carnival'])->name('frontend.carnival');
+
 Route::get('/frontend-inflatables/detail/{id}', [FrontendController::class, 'inflatablesShow'])->name('frontend.inflatables-detail');
+Route::get('/frontend-interactive/detail/{id}', [FrontendController::class, 'interactiveShow'])->name('frontend.interactive-detail');
+Route::get('/frontend-carnival/detail/{id}', [FrontendController::class, 'carnivalShow'])->name('frontend.carnival-detail');
+
 Route::post('/frontend-inflatables/sewa/{id}', [FrontendController::class, 'inflatablesSewa'])->name('frontend.inflatables-sewa');
+Route::post('/frontend-interactive/sewa/{id}', [FrontendController::class, 'interactiveSewa'])->name('frontend.interactive-sewa');
+Route::post('/frontend-carnival/sewa/{id}', [FrontendController::class, 'carnivalSewa'])->name('frontend.carnival-sewa');
+
 Route::get('/frontend/check-out', [FrontendController::class, 'check_out'])->name('frontend.check-out');
 Route::delete('/frontend/check-out/{id}', [FrontendController::class, 'delete'])->name('frontend.delete');
-Route::get('/frontend/check-out/konfirmasi', [FrontendController::class, 'konfirmasi'])->name('frontend.konfirmasi');
+Route::get('/frontend/check-out/konfirmasi', [FrontendController::class, 'konfirmasiWhatsApp'])->name('frontend.konfirmasiWhatsApp');
