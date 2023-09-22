@@ -50,11 +50,11 @@
                                 <li><a class="dropdown-item" href="/frontend-inflatables">Inflatables</a></li>
                                 <li><a class="dropdown-item" href="/frontend-interactive">Interactive</a></li>
                                 <li><a class="dropdown-item" href="/frontend-carnival">Carnival</a></li>
-                                <li><a class="dropdown-item" href="#">Water</a></li>
-                                <li><a class="dropdown-item" href="#">Electrical</a></li>
-                                <li><a class="dropdown-item" href="#">Funny</a></li>
-                                <li><a class="dropdown-item" href="#">Outbound</a></li>
-                                <li><a class="dropdown-item" href="#">Entertainment</a></li>
+                                <li><a class="dropdown-item" href="/frontend-water">Water</a></li>
+                                <li><a class="dropdown-item" href="/frontend-electrical">Electrical</a></li>
+                                <li><a class="dropdown-item" href="/frontend-funny">Funny</a></li>
+                                <li><a class="dropdown-item" href="/frontend-outbound">Outbound</a></li>
+                                <li><a class="dropdown-item" href="/frontend-entertainment">Entertainment</a></li>
                             </ul>
                         </li>
 
