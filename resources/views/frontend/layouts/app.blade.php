@@ -25,6 +25,28 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome/css/all.min.css') }}">
         <script src="{{ asset('themes/ezone/assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="{{ asset('blogy/fonts/icomoon/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('blogy/fonts/flaticon/font/flaticon.css') }}" />
+
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+        />
+
+        <link rel="stylesheet" href="{{ asset('blogy/css/tiny-slider.css') }}" />
+        <link rel="stylesheet" href="{{ asset('blogy/css/aos.css') }}" />
+        <link rel="stylesheet" href="{{ asset('blogy/css/glightbox.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('blogy/css/style.css') }}" />
+
+        <link rel="stylesheet" href="{{ asset('blogy/css/flatpickr.min.css') }}" />
+
         <!-- CSRF Token -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
@@ -62,7 +84,7 @@
                                     </li>
                                     <li><a href="frontend-about">about us</a>
                                     </li>
-                                    <li><a href="#">event</a>
+                                    <li><a href="/frontend-event">event</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -103,9 +125,9 @@
                                                 <li><a href="/frontend-entertainment">Entertainment</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">about us</a>
+                                        <li><a href="/frontend-about">about us</a>
                                         </li>
-                                        <li><a href="#">event</a>
+                                        <li><a href="/frontend-event">event</a>
                                         </li>
                                     </ul>
                                 </nav>							
@@ -292,6 +314,17 @@
         <script src="{{ asset('themes/ezone/assets/js/main.js') }}"></script>
         <script src="{{ asset('themes/ezone/assets/js/app.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script src="{{ asset('blogy/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('blogy/js/tiny-slider.js') }}"></script>
+
+        <script src="{{ asset('blogy/js/flatpickr.min.js') }}"></script>
+
+        <script src="{{ asset('blogy/js/aos.js') }}"></script>
+        <script src="{{ asset('blogy/js/glightbox.min.js') }}"></script>
+        <script src="{{ asset('blogy/js/navbar.js') }}"></script>
+        <script src="{{ asset('blogy/js/counter.js') }}"></script>
+        <script src="{{ asset('blogy/js/custom.js') }}"></script>
         @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
         <script>
             $(".delete").on("click", function () {

@@ -14,6 +14,7 @@ use App\Models\Electrical;
 use App\Models\Funny;
 use App\Models\Outbound;
 use App\Models\Entertainment;
+use App\Models\Event;
 use App\Models\Slide;
 use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -31,10 +32,64 @@ class FrontendController extends Controller
         return view('frontend/package/about-us');
     }
 
+    public function event() {
+        $Event = Event::all();
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
+
+        return view('frontend/package/event', compact('Event','jumlahData1', 'jumlahData2','jumlahData3'
+    , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
+    }
+    
+
     public function inflatables(){
         $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/inflatables', compact('Inflatable'));
+        return view('frontend/package/inflatables', compact('Inflatable', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
 
     public function inflatablesShow($id)
@@ -87,9 +142,32 @@ class FrontendController extends Controller
     }
 
     public function interactive(){
-        $Interactive = Interactive::all();
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/interactive', compact('Interactive'));
+        return view('frontend/package/interactive', compact('Interactive', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
 
     public function interactiveShow($id)
@@ -142,9 +220,32 @@ class FrontendController extends Controller
     }    
 
     public function carnival(){
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
         $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/carnival', compact('Carnival'));
+        return view('frontend/package/carnival', compact('Carnival', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     } 
 
     public function carnivalShow($id)
@@ -197,9 +298,32 @@ class FrontendController extends Controller
     }
 
     public function water(){
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
         $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/water', compact('Water'));
+        return view('frontend/package/water', compact('Water', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
 
     public function waterShow($id)
@@ -252,9 +376,32 @@ class FrontendController extends Controller
     }
 
     public function electrical(){
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
         $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/electrical', compact('Electrical'));
+        return view('frontend/package/electrical', compact('Electrical', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
 
     public function electricalShow($id)
@@ -307,9 +454,32 @@ class FrontendController extends Controller
     }
 
     public function funny(){
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
         $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/funny', compact('Funny'));
+        return view('frontend/package/funny', compact('Funny', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
 
     public function funnyShow($id)
@@ -362,9 +532,32 @@ class FrontendController extends Controller
     }
 
     public function outbound(){
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
         $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/outbound', compact('Outbound'));
+        return view('frontend/package/outbound', compact('Outbound', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
 
     public function outboundShow($id)
@@ -417,9 +610,32 @@ class FrontendController extends Controller
     }
 
     public function entertainment(){
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
         $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
        
-        return view('frontend/package/entertainment', compact('Entertainment'));
+        return view('frontend/package/entertainment', compact('Entertainment', 'jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
 
     public function entertainmentShow($id)

@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ElectricalController;
 use App\Http\Controllers\Admin\FunnyController;
 use App\Http\Controllers\Admin\EntertainmentController;
 use App\Http\Controllers\Admin\OutboundController;
+use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\FrontendController;
 
 /*
@@ -46,6 +47,9 @@ Route::group(['middleware' => ['auth', 'CekLevel:admin']], function () {
     // DATA USER
     Route::resource('/admin/user', UserController::class);
 
+    // DATA EVENT
+    Route::resource('/admin/event', EventController::class);
+
     // DATA INFLATABLE
     Route::resource('/admin/inflatable', InflatableController::class);
 
@@ -78,6 +82,7 @@ Route::group(['middleware' => ['auth', 'CekLevel:admin']], function () {
 // TAMPILAN FRONTEND USER
 Route::get('/frontend-dashboard', [FrontendController::class, 'index'])->name('frontend.dashboard');
 Route::get('/frontend-about', [FrontendController::class, 'about'])->name('frontend.about');
+Route::get('/frontend-event', [FrontendController::class, 'event'])->name('frontend.event');
 
 Route::get('/frontend-inflatables', [FrontendController::class, 'inflatables'])->name('frontend.inflatables');
 Route::get('/frontend-inflatables/detail/{id}', [FrontendController::class, 'inflatablesShow'])->name('frontend.inflatables-detail');

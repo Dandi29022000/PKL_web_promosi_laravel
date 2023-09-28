@@ -52,6 +52,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="/admin/event" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Data Event
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>

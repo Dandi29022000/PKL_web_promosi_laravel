@@ -23,14 +23,14 @@
                         <h3 class="sidebar-title">Catalogue</h3>
                         <div class="sidebar-categories">
                             <ul>
-                                <li><a href="/frontend-Inflatables">Inflatables</a></li>
-                                <li><a href="/frontend-interactive">Interactive</a></li>
-                                <li><a href="/frontend-carnival">Carnival</a></li>
-                                <li><a href="/frontend-water">Water</a></li>
-                                <li><a href="/frontend-electrical">Electrical</a></li>
-                                <li><a href="/frontend-funny">Funny</a></li>
-                                <li><a href="/frontend-outbound">Outbound</a></li>
-                                <li><a href="/frontend-entertainment">Entertainment</a></li>
+                                <li><a href="/frontend-inflatables">Inflatables <span>{{ $jumlahData1 }}</a></li>
+                                <li><a href="/frontend-interactive">Interactive <span>{{ $jumlahData2 }}</a></li>
+                                <li><a href="/frontend-carnival">Carnival <span>{{ $jumlahData3 }}</a></li>
+                                <li><a href="/frontend-water">Water <span>{{ $jumlahData4 }}</a></li>
+                                <li><a href="/frontend-electrical">Electrical <span>{{ $jumlahData5 }}</a></li>
+                                <li><a href="/frontend-funny">Funny <span>{{ $jumlahData6 }}</a></li>
+                                <li><a href="/frontend-outbound">Outbound <span>{{ $jumlahData7 }}</a></li>
+                                <li><a href="/frontend-entertainment">Entertainment <span>{{ $jumlahData8 }}</a></li>
                             </ul>
                         </div>
                     </div>
