@@ -83,6 +83,7 @@ Route::group(['middleware' => ['auth', 'CekLevel:admin']], function () {
 Route::get('/frontend-dashboard', [FrontendController::class, 'index'])->name('frontend.dashboard');
 Route::get('/frontend-about', [FrontendController::class, 'about'])->name('frontend.about');
 Route::get('/frontend-event', [FrontendController::class, 'event'])->name('frontend.event');
+Route::get('/frontend-event/detail{id}', [FrontendController::class, 'eventDetail'])->name('frontend.event-detail');
 
 Route::get('/frontend-inflatables', [FrontendController::class, 'inflatables'])->name('frontend.inflatables');
 Route::get('/frontend-inflatables/detail/{id}', [FrontendController::class, 'inflatablesShow'])->name('frontend.inflatables-detail');

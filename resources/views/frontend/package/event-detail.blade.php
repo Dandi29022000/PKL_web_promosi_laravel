@@ -9,45 +9,37 @@
     <div class="row same-height justify-content-center">
         <div class="col-md-6">
         <div class="post-entry text-center">
-            <h1 class="mb-4">Event</h1>
+            <h1 class="mb-4">{{ $Event->judul }}</h1>
         </div>
         </div>
     </div>
     </div>
 </div>
 
-<div class="section search-result-wrap">
+<section class="section">
     <div class="container">
-        <div class="row posts-entry">
-            <div class="col-lg-8">
-                @foreach($Event as $e)
-                    <div class="blog-entry d-flex blog-entry-search-item">
-                        <a href="single.html" class="img-link me-4">
-                        <img src="{{ Storage::url($e->gambar) }}" width="200px" alt="Image" class="img-fluid" />
-                        </a>
-                        <div>
-                        <span class="date"
-                            >{{ $e->tanggal }} &bullet; <a href="#">{{ $e->jenis }}</a></span
-                        >
-                        <h2>
-                            <a href="#"
-                            >{{ $e->judul }}</a
-                            >
-                        </h2>
-                        <p>
-                            {{ substr($e->deskripsi, 0, 100) }}{{ strlen($e->deskripsi) > 100 ? "..." : "" }}
-                        </p>
-                        <p>
-                            <a href="{{ route('frontend.event-detail', $e->id) }}" class="btn btn-sm btn-outline-primary py-2"
-                            >Read More</a
-                            >
-                        </p>
-                        </div>
+        <div class="row blog-entries element-animate">
+            <div class="col-md-12 col-lg-8 main-content">
+                <div class="post-content-body">
+                    <p>
+                        {{ $Event->deskripsi}}
+                    </p>
+                    <div class="row my-4">
+                    <div class="col-md-12 mb-4">
+                        <img
+                        src="{{ Storage::url($Event->gambar) }}"
+                        alt="Image placeholder"
+                        class="img-fluid rounded"
+                        />
                     </div>
-                @endforeach
+                    </div>
+                </div>
             </div>
 
-            <div class="col-lg-4 sidebar">
+            <!-- END main-content -->
+
+            <div class="col-md-12 col-lg-4 sidebar">
+                <!-- END sidebar-box -->
                 <div class="sidebar-box">
                     <h3 class="heading">Catalogue</h3>
                     <ul class="categories">
@@ -61,11 +53,11 @@
                         <li><a href="/frontend-entertainment">Entertainment <span>{{ $jumlahData8 }}</a></li>
                     </ul>
                 </div>
+                <!-- END sidebar-box -->
             </div>
-            <!-- END sidebar-box -->
-            </div>
+            <!-- END sidebar -->
         </div>
     </div>
-</div>
+</section>
 
 @endsection

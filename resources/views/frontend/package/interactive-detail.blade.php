@@ -82,10 +82,10 @@
 
 												<div class="row">
 													<div class="col-md-6">
-														<a href="{{ route('frontend.interactive') }}" class="btn btn-warning btn-block"><b>Kembali</b></a>
+														<a href="{{ route('frontend.interactive') }}" class="btn btn-warning btn-block py-1"><b>Kembali</b></a>
 													</div>
 													<div class="col-md-6">
-														<button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-cart-shopping"></i><b> Masukkan Keranjang</b></button>
+														<button type="submit" class="btn btn-primary btn-block py-1"><i class="fa-solid fa-cart-shopping"></i><b> Masukkan Keranjang</b></button>
 													</div>
 												</div>
 											</form>

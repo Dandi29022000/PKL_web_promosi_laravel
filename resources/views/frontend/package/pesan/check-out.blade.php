@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 mb-3">
-                <a href="{{ url('frontend-dashboard') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+                <a href="{{ url('frontend-dashboard') }}" class="btn btn-primary py-1"><i class="fa fa-arrow-left"></i> Kembali</a>
             </div>
             <!-- <div class="col-md-12 mt-2">
                 <nav aria-label="breadcrumb">

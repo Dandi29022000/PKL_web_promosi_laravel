@@ -62,6 +62,35 @@ class FrontendController extends Controller
     , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
     }
     
+    public function eventDetail($id)
+    {
+        $Event = Event::where('id', $id)->first();
+        $Inflatable = Inflatable::all();
+        $jumlahData1 = $Inflatable->count();
+
+        $Interactive = Interactive::all(); 
+        $jumlahData2 = $Interactive->count(); 
+        
+        $Carnival = Carnival::all();
+        $jumlahData3 = $Carnival->count();
+
+        $Water = Water::all();
+        $jumlahData4 = $Water->count();
+
+        $Electrical = Electrical::all();
+        $jumlahData5 = $Electrical->count();
+
+        $Funny = Funny::all();
+        $jumlahData6 = $Funny->count();
+
+        $Outbound = Outbound::all();
+        $jumlahData7 = $Outbound->count();
+
+        $Entertainment = Entertainment::all();
+        $jumlahData8 = $Entertainment->count();
+        return view('frontend/package/event-detail', compact('Event','jumlahData1', 'jumlahData2','jumlahData3'
+        , 'jumlahData4', 'jumlahData5', 'jumlahData6', 'jumlahData7', 'jumlahData8'));
+    }
 
     public function inflatables(){
         $Inflatable = Inflatable::all();
