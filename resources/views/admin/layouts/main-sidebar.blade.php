@@ -43,6 +43,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="/admin/slides" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Data Slide
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>

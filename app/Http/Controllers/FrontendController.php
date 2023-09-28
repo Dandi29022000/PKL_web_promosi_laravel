@@ -14,6 +14,7 @@ use App\Models\Electrical;
 use App\Models\Funny;
 use App\Models\Outbound;
 use App\Models\Entertainment;
+use App\Models\Slide;
 use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
@@ -21,9 +22,13 @@ use Illuminate\Support\Facades\Auth;
 class FrontendController extends Controller
 {
     public function index(){
-        $Inflatable = Inflatable::all();
+        $Slide = Slide::active()->orderBy('position', 'ASC')->get();
 
-        return view('frontend/package/dashboard', compact('Inflatable'));
+        return view('frontend/package/dashboard', compact('Slide'));
+    }
+
+    public function about() {
+        return view('frontend/package/about-us');
     }
 
     public function inflatables(){
@@ -77,7 +82,7 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }
 
@@ -132,7 +137,7 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }    
 
@@ -187,7 +192,7 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }
 
@@ -242,7 +247,7 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }
 
@@ -297,7 +302,7 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }
 
@@ -352,7 +357,7 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }
 
@@ -407,7 +412,7 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }
 
@@ -462,14 +467,14 @@ class FrontendController extends Controller
             $sewa_detail->update();
         }
 
-        Alert::success('Success', 'Sewa Berhasil Masuk Keranjang!');
+        Alert::success('Success', 'Permainan Berhasil Masuk Keranjang!');
         return redirect()->route('frontend.dashboard');
     }
 
     public function check_out()
     {
         $Sewa = Sewa::where('user_id', Auth::user()->id)->where('status',0)->first();
- 	$Sewa_details = [];
+ 	    $Sewa_details = [];
         if(!empty($Sewa))
         {
             $Sewa_details = SewaDetail::where('sewa_id', $Sewa->id)->get();
@@ -511,10 +516,17 @@ class FrontendController extends Controller
     {
         // Mendapatkan nilai-nilai yang ingin Anda sertakan dalam pesan
         $Sewa = Sewa::where('user_id', Auth::user()->id)->where('status', 0)->first();
-        $Sewa_details = SewaDetail::where('sewa_id', $Sewa->id)->get();
+        $Sewa_id = $Sewa->id;
+        $Sewa->status = 1;
+        $Sewa->update();
+
+        $Sewa_details = SewaDetail::where('sewa_id', $Sewa_id)->get();
         
         $tanggalPesan = $Sewa->tanggal;
-        $pesan = "Halo, saya ingin memesan permainan:\n\n";
+
+        // Mendapatkan nama pengguna yang sedang login
+        $namaUser = Auth::user()->name;
+        $pesan = "Halo, saya $namaUser! ingin memesan permainan:\n\n";
         
         foreach ($Sewa_details as $Sewa_detail) {
             $Inflatable = Inflatable::where('id', $Sewa_detail->permainan_id)->first();
@@ -522,6 +534,7 @@ class FrontendController extends Controller
             $lamaSewa = $Sewa_detail->lama_sewa . " hari";
             
             $pesan .= "Tanggal Pesan: $tanggalPesan, Nama Permainan: $namaPermainan\n,Lama Sewa: $lamaSewa\n";
+            $Inflatable->update();
         }
 
         // Membuat link WhatsApp dengan pesan yang sesuai

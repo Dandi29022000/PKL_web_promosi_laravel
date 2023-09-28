@@ -69,10 +69,15 @@ Route::group(['middleware' => ['auth', 'CekLevel:admin']], function () {
 
     // DATA ENTERTAINMENT
     Route::resource('/admin/entertainment', EntertainmentController::class);
+
+    Route::resource('/admin/slides', \App\Http\Controllers\Admin\SlideController::class);
+    Route::get('/admin/slides/{slideId}/up', [\App\Http\Controllers\Admin\SlideController::class, 'moveUp']);
+    Route::get('/admin/slides/{slideId}/down', [\App\Http\Controllers\Admin\SlideController::class, 'moveDown']);
 });
 
 // TAMPILAN FRONTEND USER
 Route::get('/frontend-dashboard', [FrontendController::class, 'index'])->name('frontend.dashboard');
+Route::get('/frontend-about', [FrontendController::class, 'about'])->name('frontend.about');
 
 Route::get('/frontend-inflatables', [FrontendController::class, 'inflatables'])->name('frontend.inflatables');
 Route::get('/frontend-inflatables/detail/{id}', [FrontendController::class, 'inflatablesShow'])->name('frontend.inflatables-detail');
